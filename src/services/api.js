@@ -1,7 +1,13 @@
-import { create } from 'apisauce';
-
-const api = create({
-    baseUrl: 'http://localhost:8080',
-});
-
-export default api;
+export default function signIn(){
+    return Promise(resolve => {
+        setiTimeout(() => {
+            resolve({
+                token: 'kkk',
+                user:{
+                    name: 'Davi',
+                    email: 'okok@gmail.com',
+                },
+            });
+        }, 2000);
+    });
+}
