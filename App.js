@@ -18,19 +18,8 @@ export default function App() {
         <Stack.Screen name="Login" component={TelaLog} />
         <Stack.Screen name="Ir" component={TelaHome} options={{ headerShown: false}}/>
         <Stack.Screen name="Bem-Vindo" component={TelaHome} options={{ headerShown: false}}/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         <Stack.Screen name="Perfil" component={Perfil} />
-=======
->>>>>>> a71db1feb34319937bcfc30a2f506e6b62ce2da1
-=======
->>>>>>> a71db1feb34319937bcfc30a2f506e6b62ce2da1
-=======
->>>>>>> a71db1feb34319937bcfc30a2f506e6b62ce2da1
-=======
->>>>>>> a71db1feb34319937bcfc30a2f506e6b62ce2da1
       </Stack.Navigator>
     </NavigationContainer >
   );
