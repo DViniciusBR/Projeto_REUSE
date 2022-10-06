@@ -2,14 +2,6 @@ import React from 'react';
 import { Box, VStack, HStack, FormControl, Input, Button, Center, NativeBaseProvider, Pressable, Icon, Link, show } from "native-base";
 import { Text, SafeAreaView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { signIn } from '../../services/api';
-
-const SignIn: React.FC = () => {
-  async function handleSignIn() {
-    const response = await signIn();
-    console.log(response);
-  }
-}
 
 export default function TelaLog({ navigation }) {
 
@@ -37,7 +29,7 @@ export default function TelaLog({ navigation }) {
                 href="https://support.google.com/accounts/answer/41078?hl=pt-BR&co=GENIE.Platform%3DAndroid">Esqueceu sua senha?</Link>
 
               <Button backgroundColor="black" mt="7"
-                onPress={() => navigation.navigate("Bem-Vindo", {handleSignIn})}>Finalizar</Button>
+                onPress={() => navigation.navigate("Bem-Vindo", {})}>Finalizar</Button>
 
               <HStack mt="6" justifyContent="center">
                 <Text fontSize="sm" color="coolGray.600" _dark={{

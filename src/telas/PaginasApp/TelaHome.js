@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Text, View, SafeAreaView, Button } from 'react-native';
+import { Text, View, SafeAreaView } from 'react-native';
 import {  NativeBaseProvider } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
-import MenuBtn from '../componentes/MenuBtn';
-import SearchBar from '../../componentes/SearchBar';
+import Menu from '../../componentes/Menu';
+//import SearchBar from '../../componentes/SearchBar';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,11 +20,26 @@ function JogoScreen() {
 function HomeScreen() {
   return (
     <SafeAreaView>
-      <MenuBtn/>
-      <SearchBar/>
+      
     </SafeAreaView>
   );
 }
+
+function MenuLateral() {
+  return (
+    <SafeAreaView>
+      <Menu/>
+    </SafeAreaView>
+  );
+}
+
+// function Search() {
+//   return (
+//     <SafeAreaView>
+//      <SearchBar/>
+//     </SafeAreaView>
+//   );
+// }
 
 function ChatScreen() {
   return (
@@ -60,7 +75,7 @@ export default function App() {
         <Tab.Screen name="Jogo" component={JogoScreen} options={{ headerShown: false }} />
         <Tab.Screen name="Home" component={HomeScreen}
           options={{
-            headerLeft: (props) => <HomeScreen {...props} />,
+            headerLeft: (props) => <MenuLateral {...props} />,
             headerTitle: '',
             headerStyle: { backgroundColor: '#42eb89' },
             headerTintColor: 'black',
