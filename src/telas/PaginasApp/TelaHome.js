@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
 import MenuBtn from '../componentes/MenuBtn';
-import SearchBar from '../componentes/SearchBar';
+import SearchBar from '../../componentes/SearchBar';
 
 const Tab = createBottomTabNavigator();
 
