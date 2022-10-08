@@ -5,6 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
 import Menu from '../../componentes/Menu';
+import Carrosel from '../../componentes/Carrosel'
 //import Carousel from '../../componentes/Carousel';
 //import SearchBar from '../../componentes/SearchBar';
 
@@ -21,7 +22,7 @@ function JogoScreen() {
 function HomeScreen() {
   return (
     <SafeAreaView>
-      {/* <Carousel/> */}
+      <Carrosel/>
     </SafeAreaView>
   );
 }
