@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Text, View, SafeAreaView } from 'react-native';
-import {  NativeBaseProvider } from "native-base";
+import { Text, View, SafeAreaView, ImageBackground, StyleSheet } from 'react-native';
+import { NativeBaseProvider } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
@@ -10,6 +10,8 @@ import Carrosel from '../../componentes/Carrosel'
 //import SearchBar from '../../componentes/SearchBar';
 
 const Tab = createBottomTabNavigator();
+
+//Abaixo encontra-se os botões do menu de navegação(tab navigation)
 
 function JogoScreen() {
   return (
@@ -21,8 +23,10 @@ function JogoScreen() {
 
 function HomeScreen() {
   return (
-    <SafeAreaView>
-      <Carrosel/>
+    <SafeAreaView style={styles.container}>
+      <ImageBackground source={require('../../../assets/telainicial.png')} resizeMode="cover" style={styles.fundo}>
+        <Carrosel />
+      </ImageBackground>
     </SafeAreaView>
   );
 }
@@ -30,7 +34,7 @@ function HomeScreen() {
 function MenuLateral() {
   return (
     <SafeAreaView>
-      <Menu/>
+      <Menu />
     </SafeAreaView>
   );
 }
@@ -51,10 +55,12 @@ function ChatScreen() {
   );
 }
 
-export default function App() {
+export default function App() { // Isso é reponsável pelo menu de navegação da tela inicial(tab navigation)
   return (
     <NativeBaseProvider>
       <Tab.Navigator
+        //barStyle={{ backgroundColor: 'blck' }} <- NÃO ESTÁ FUNCIONANDO
+        initialRouteName='Home'
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
@@ -73,14 +79,13 @@ export default function App() {
           tabBarActiveTintColor: '#42eb89',
           tabBarInactiveTintColor: 'gray',
         })}
-      >
+        >
         <Tab.Screen name="Jogo" component={JogoScreen} options={{ headerShown: false }} />
         <Tab.Screen name="Home" component={HomeScreen}
           options={{
             headerLeft: (props) => <MenuLateral {...props} />,
             headerTitle: '',
             headerStyle: { backgroundColor: '#42eb89' },
-            headerTintColor: 'black',
             headerTitleStyle: { fontWeight: 'bold', },
           }} />
         <Tab.Screen name="Chat" component={ChatScreen} options={{ headerShown: false }} />
@@ -88,3 +93,14 @@ export default function App() {
     </NativeBaseProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  fundo: {
+    flex: 1,
+    justifyContent: "center",
+    opacity: 0.5
+  },
+}); 

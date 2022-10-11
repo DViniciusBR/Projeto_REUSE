@@ -13,11 +13,11 @@ export default function TelaInicial({ navigation }) {
 
           <Box alignItems="center">
             <Button backgroundColor="black" mt="7"
-            onPress={() => navigation.navigate("Cadastre-se", {})} >
+              onPress={() => navigation.navigate("Cadastre-se", {})} >
               <Text style={styles.TitBotao}>Cadastre-se</Text>
             </Button>
             <Button backgroundColor="black" mt="7"
-            onPress={() => navigation.navigate("Login", {})} >
+              onPress={() => navigation.navigate("Login", {})} >
               <Text style={styles.TitBotao}>Login</Text>
             </Button>
 
