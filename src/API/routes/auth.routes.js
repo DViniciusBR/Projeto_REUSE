@@ -1,6 +1,6 @@
 import React from 'react';
-import Login from '../telas/PaginasApp/TelaLog';
-import Cadastro from '../telas/PaginasApp/TelaCad';
+import Login from '../../telas/PaginasApp/TelaLog';
+import Cadastro from '../../telas/PaginasApp/TelaCad';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
