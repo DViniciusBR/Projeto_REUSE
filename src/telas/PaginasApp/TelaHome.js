@@ -1,17 +1,16 @@
 import * as React from 'react';
-import { Text, View, SafeAreaView, ImageBackground, StyleSheet } from 'react-native';
+import { Text, View, SafeAreaView, ImageBackground } from 'react-native';
 import { NativeBaseProvider } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
 import Menu from '../../componentes/Menu';
 import Carrosel from '../../componentes/Carrosel'
-//import Carousel from '../../componentes/Carousel';
-//import SearchBar from '../../componentes/SearchBar';
+import SearchBar from '../../componentes/SearchBar';
 
 const Tab = createBottomTabNavigator();
 
-//Abaixo encontra-se os botões do menu de navegação(tab navigation)
+//Abaixo encontra-se os botõesva do menu de navegação(tab navigation)
 
 function JogoScreen() {
   return (
@@ -23,9 +22,10 @@ function JogoScreen() {
 
 function HomeScreen() {
   return (
-    <SafeAreaView style={styles.container}>
-      <ImageBackground source={require('../../../assets/telainicial.png')} resizeMode="cover" style={styles.fundo}>
-        <Carrosel />
+    <SafeAreaView style={{flex: 1}}>
+      <ImageBackground source={require('../../../assets/telainicial.png')} style={{resizeMode:"cover", flex: 1}} imageStyle={{opacity: 0.5}}>
+      <Carrosel/>
+      <SearchBar/>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -59,7 +59,12 @@ export default function App() { // Isso é reponsável pelo menu de navegação 
   return (
     <NativeBaseProvider>
       <Tab.Navigator
-        //barStyle={{ backgroundColor: 'blck' }} <- NÃO ESTÁ FUNCIONANDO
+        tabBarOption=
+        {{
+          style: {
+            backgroundColor: "black"
+          }
+        }}
         initialRouteName='Home'
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -93,14 +98,3 @@ export default function App() { // Isso é reponsável pelo menu de navegação 
     </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  fundo: {
-    flex: 1,
-    justifyContent: "center",
-    opacity: 0.5
-  },
-}); 

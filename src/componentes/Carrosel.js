@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Text, View, Dimensions, Image } from 'react-native';
+import { Text, Dimensions, Image, SafeAreaView } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
 export const SLIDER_WIDTH = Dimensions.get('window').width + 30;
@@ -25,7 +25,7 @@ const data = [
 
 const renderItem = ({ item }) => {
   return (
-    <View
+    <SafeAreaView
       style={{
         borderWidth: 3.5,
         padding: 1,
@@ -33,13 +33,12 @@ const renderItem = ({ item }) => {
         width: 215,
         borderRadius: 30,
         alignItems: 'center',
-        backgroundColor: 'white',
       }}>
-      <Image source={{ uri: item.url }} style={{ width: 150, height: 150 }} />
+      <Image source={{ uri: item.url }} style={{ width: 210, height: 243, borderRadius: 30 }} />
       <Text style={{ marginVertical: 10, fontSize: 20, fontWeight: 'bold' }}>
         {item.name}
       </Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -47,7 +46,7 @@ const App = () => {
   const [index, setIndex] = useState(0);
   const isCarousel = useRef(null);
   return (
-    <View style={{
+    <SafeAreaView style={{
       marginTop: 10,
       alignItems: 'center'
     }}>
@@ -68,16 +67,16 @@ const App = () => {
           height: 8,
           borderRadius: 5,
           marginHorizontal: 8,
-          backgroundColor: '#F4BB41',
+          backgroundColor: 'black',
         }}
         tappableDots={true}
         inactiveDotStyle={{
-          backgroundColor: 'black',
+          backgroundColor: 'white',
         }}
         inactiveDotOpacity={0.7}
         inactiveDotScale={0.6}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
