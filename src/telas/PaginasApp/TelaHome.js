@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Text, View, SafeAreaView, ImageBackground } from 'react-native';
-import { NativeBaseProvider } from "native-base";
+import { Text, View, SafeAreaView, ImageBackground, Image } from 'react-native';
+import { NativeBaseProvider, Button, Box } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
 import Menu from '../../componentes/Menu';
-import Carrosel from '../../componentes/Carrosel'
+import Carrosel from '../../componentes/Carrosel';
 import SearchBar from '../../componentes/SearchBar';
 
 const Tab = createBottomTabNavigator();
@@ -20,14 +20,39 @@ function JogoScreen() {
   );
 }
 
-function HomeScreen() {
+
+
+function HomeScreen({ navigation }) {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <ImageBackground source={require('../../../assets/telainicial.png')} style={{resizeMode:"cover", flex: 1}} imageStyle={{opacity: 0.5}}>
-      <Carrosel/>
-      <SearchBar/>
-      </ImageBackground>
-    </SafeAreaView>
+    <NativeBaseProvider>
+      <SafeAreaView style={{ flex: 1 }}>
+        <ImageBackground source={require('../../../assets/telainicial.png')} style={{ resizeMode: "cover", flex: 1 }} imageStyle={{ opacity: 0.5 }}>
+          <Carrosel />
+          <SearchBar />
+          <Box alignItems='flex-start'>
+            <Button
+              style={{ padding: 1, height: 140, width: 130, borderRadius: 30 }}
+              backgroundColor="#42eb89" mt="7"
+              onPress={() => navigation.navigate("Cadastre-se", {})}>
+              <Text>Desapega</Text>
+            </Button></Box>
+          <Box alignItems='center'>
+            <Button 
+              style={{ padding: 1, height: 150, width: 140, borderRadius: 30 }}
+              backgroundColor="#42eb89" mt="7"
+              onPress={() => navigation.navigate("Cadastre-se", {})}>
+              <Text>Salve o mundo</Text>
+            </Button></Box>
+          <Box alignItems='center'>
+            <Button
+              style={{ padding: 1, height: 150, width: 140, borderRadius: 30 }}
+              backgroundColor="#42eb89" mt="7"
+              onPress={() => navigation.navigate("Cadastre-se", {})}>
+              <Text>Recicle</Text>
+            </Button></Box>
+        </ImageBackground>
+      </SafeAreaView>
+    </NativeBaseProvider>
   );
 }
 
@@ -39,13 +64,7 @@ function MenuLateral() {
   );
 }
 
-// function Search() {
-//   return (
-//     <SafeAreaView>
-//      <SearchBar/>
-//     </SafeAreaView>
-//   );
-// }
+
 
 function ChatScreen() {
   return (
@@ -84,7 +103,7 @@ export default function App() { // Isso é reponsável pelo menu de navegação 
           tabBarActiveTintColor: '#42eb89',
           tabBarInactiveTintColor: 'gray',
         })}
-        >
+      >
         <Tab.Screen name="Jogo" component={JogoScreen} options={{ headerShown: false }} />
         <Tab.Screen name="Home" component={HomeScreen}
           options={{

@@ -10,7 +10,6 @@ export default function TelaInicial({ navigation }) {
         <ImageBackground source={require('../../../assets/telainicial.png')} resizeMode="cover" style={styles.fundo}>
           <Image source={require('../../../assets/logo.png')} resizeMode="cover" style={styles.logo}></Image>
           <Text style={styles.titulo}>Re-Use</Text>
-
           <Box alignItems="center">
             <Button backgroundColor="black" mt="7"
               onPress={() => navigation.navigate("Cadastre-se", {})} >
@@ -20,7 +19,6 @@ export default function TelaInicial({ navigation }) {
               onPress={() => navigation.navigate("Login", {})} >
               <Text style={styles.TitBotao}>Login</Text>
             </Button>
-
           </Box>
         </ImageBackground>
       </SafeAreaView>

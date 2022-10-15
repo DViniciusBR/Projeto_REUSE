@@ -27,13 +27,9 @@ const renderItem = ({ item }) => {
   return (
     <SafeAreaView
       style={{
-        borderWidth: 3.5,
-        padding: 1,
-        height: 250,
-        width: 215,
-        borderRadius: 30,
-        alignItems: 'center',
-      }}>
+        borderWidth: 3.5, padding: 1,
+        height: 250, width: 215,
+        borderRadius: 30, alignItems: 'center' }}>
       <Image source={{ uri: item.url }} style={{ width: 210, height: 243, borderRadius: 30 }} />
       <Text style={{ marginVertical: 10, fontSize: 20, fontWeight: 'bold' }}>
         {item.name}
@@ -46,10 +42,7 @@ const App = () => {
   const [index, setIndex] = useState(0);
   const isCarousel = useRef(null);
   return (
-    <SafeAreaView style={{
-      marginTop: 10,
-      alignItems: 'center'
-    }}>
+    <SafeAreaView style={{ marginTop: 10, alignItems: 'center'}}>
       <Carousel
         ref={isCarousel}
         data={data}
@@ -62,17 +55,9 @@ const App = () => {
         dotsLength={data.length}
         activeDotIndex={index}
         carouselRef={isCarousel}
-        dotStyle={{
-          width: 20,
-          height: 8,
-          borderRadius: 5,
-          marginHorizontal: 8,
-          backgroundColor: 'black',
-        }}
+        dotStyle={{ width: 20, height: 8, borderRadius: 5, marginHorizontal: 8, backgroundColor: 'black' }}
         tappableDots={true}
-        inactiveDotStyle={{
-          backgroundColor: 'white',
-        }}
+        inactiveDotStyle={{ backgroundColor: 'white' }}
         inactiveDotOpacity={0.7}
         inactiveDotScale={0.6}
       />
