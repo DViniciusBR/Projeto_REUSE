@@ -14,12 +14,12 @@ const data = [
   {
     id: 2,
     name: 'JavaScript',
-    url: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/Javascript_Logo.png',
+    url: 'https://www.teraambiental.com.br/hs-fs/hubfs/Reciclar%2c%20reaproveitar%2c%20reutilizar.png?width=614&name=Reciclar%2c%20reaproveitar%2c%20reutilizar.png',
   },
   {
     id: 3,
     name: 'Node JS',
-    url: 'https://upload.wikimedia.org/wikipedia/commons/6/67/NodeJS.png',
+    url: 'https://www.teraambiental.com.br/hs-fs/hubfs/Reciclar%2c%20reaproveitar%2c%20reutilizar.png?width=614&name=Reciclar%2c%20reaproveitar%2c%20reutilizar.png',
   },
 ];
 

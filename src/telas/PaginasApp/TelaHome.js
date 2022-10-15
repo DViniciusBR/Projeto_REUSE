@@ -31,25 +31,23 @@ function HomeScreen({ navigation }) {
           <SearchBar />
           <Box alignItems='flex-start'>
             <Button
+              source={require('../../../assets/logo.png')}
               style={{ padding: 1, height: 140, width: 130, borderRadius: 30 }}
               backgroundColor="#42eb89" mt="7"
               onPress={() => navigation.navigate("Cadastre-se", {})}>
-              <Text>Desapega</Text>
-            </Button></Box>
+            </Button><Text style={{ alignItems: 'center' }}>Desapega</Text></Box>
           <Box alignItems='center'>
             <Button 
               style={{ padding: 1, height: 150, width: 140, borderRadius: 30 }}
               backgroundColor="#42eb89" mt="7"
               onPress={() => navigation.navigate("Cadastre-se", {})}>
-              <Text>Salve o mundo</Text>
-            </Button></Box>
+            </Button><Text style={{ alignItems: 'center' }}>Salve o mundo</Text></Box>
           <Box alignItems='center'>
             <Button
               style={{ padding: 1, height: 150, width: 140, borderRadius: 30 }}
               backgroundColor="#42eb89" mt="7"
               onPress={() => navigation.navigate("Cadastre-se", {})}>
-              <Text>Recicle</Text>
-            </Button></Box>
+            </Button><Text style={{ alignItems: 'center' }}>Recicle</Text></Box>
         </ImageBackground>
       </SafeAreaView>
     </NativeBaseProvider>
