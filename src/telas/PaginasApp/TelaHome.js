@@ -31,20 +31,20 @@ function HomeScreen({ navigation }) {
           <SearchBar />
           <Box alignItems='flex-start'>
             <Button
-              source={require('../../../assets/logo.png')}
-              style={{ padding: 1, height: 140, width: 130, borderRadius: 30 }}
+              style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
               backgroundColor="#42eb89" mt="7"
+              imageStyle
               onPress={() => navigation.navigate("Cadastre-se", {})}>
-            </Button><Text style={{ alignItems: 'center' }}>Desapega</Text></Box>
+            </Button><Image source={require('../../../assets/logo.png')} style={{ height: 80, width: 70 }}/><Text style={{ alignItems: 'center' }}>Desapega</Text></Box>
           <Box alignItems='center'>
             <Button 
-              style={{ padding: 1, height: 150, width: 140, borderRadius: 30 }}
+              style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
               backgroundColor="#42eb89" mt="7"
               onPress={() => navigation.navigate("Cadastre-se", {})}>
             </Button><Text style={{ alignItems: 'center' }}>Salve o mundo</Text></Box>
           <Box alignItems='center'>
             <Button
-              style={{ padding: 1, height: 150, width: 140, borderRadius: 30 }}
+              style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
               backgroundColor="#42eb89" mt="7"
               onPress={() => navigation.navigate("Cadastre-se", {})}>
             </Button><Text style={{ alignItems: 'center' }}>Recicle</Text></Box>
