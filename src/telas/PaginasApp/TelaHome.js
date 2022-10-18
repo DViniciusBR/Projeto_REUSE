@@ -1,11 +1,6 @@
 import * as React from 'react';
-<<<<<<< HEAD
 import { Text, View, SafeAreaView, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import { NativeBaseProvider, Button, Box, KeyboardAvoidingView } from "native-base";
-=======
-import { Text, View, SafeAreaView, ImageBackground } from 'react-native';
-import { NativeBaseProvider } from "native-base";
->>>>>>> c1eb166e7274d57c249f616df17b71fe11f8c4fc
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
