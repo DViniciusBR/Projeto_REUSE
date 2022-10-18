@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Text, View, SafeAreaView, ImageBackground, Image } from 'react-native';
-import { NativeBaseProvider, Button, Box } from "native-base";
+import { Text, View, SafeAreaView, ImageBackground, Image, TouchableOpacity } from 'react-native';
+import { NativeBaseProvider, Button, Box, KeyboardAvoidingView } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
@@ -20,37 +20,57 @@ function JogoScreen() {
   );
 }
 
-
-
 function HomeScreen({ navigation }) {
   return (
     <NativeBaseProvider>
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-around' }}>
         <ImageBackground source={require('../../../assets/telainicial.png')} style={{ resizeMode: "cover", flex: 1 }} imageStyle={{ opacity: 0.5 }}>
-          <Carrosel />
-          <SearchBar />
-          <Box alignItems='flex-start'>
-            <Button
-              style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
-              backgroundColor="#42eb89" mt="7"
-              imageStyle
-              onPress={() => navigation.navigate("Cadastre-se", {})}>
-            </Button><Image source={require('../../../assets/logo.png')} style={{ height: 80, width: 70 }}/><Text style={{ alignItems: 'center' }}>Desapega</Text></Box>
-          <Box alignItems='center'>
-            <Button 
-              style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
-              backgroundColor="#42eb89" mt="7"
-              onPress={() => navigation.navigate("Cadastre-se", {})}>
-            </Button><Text style={{ alignItems: 'center' }}>Salve o mundo</Text></Box>
-          <Box alignItems='center'>
-            <Button
-              style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
-              backgroundColor="#42eb89" mt="7"
-              onPress={() => navigation.navigate("Cadastre-se", {})}>
-            </Button><Text style={{ alignItems: 'center' }}>Recicle</Text></Box>
+          <KeyboardAvoidingView behavior={Platform.OS === "android" ? "padding" : "height"}>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => navigation.navigate('TelaArtigos', {})}>
+              <Carrosel />
+            </TouchableOpacity>
+            <View flexDirection="row" alignSelf="flex-start">
+              <Box alignItems="center" style={{ marginLeft: 10 }}>
+                <Button
+                  position="relative"
+                  style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
+                  backgroundColor="#42eb89" mt="7"
+                  onPress={() => navigation.navigate("TelaArtigos", {})}>
+                </Button>
+                <Text style={{ alignItems: 'center' }}>Desapega</Text>
+              </Box>
+              <View>
+                <Box alignItems="center" style={{ marginLeft: 20 }}>
+                  <Button
+                    position="relative"
+                    style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
+                    backgroundColor="#42eb89" mt="7"
+                    onPress={() => navigation.navigate("Dados", {})}>
+                  </Button>
+                  <Text style={{ alignItems: 'center' }}>Salve o mundo</Text>
+                </Box>
+              </View>
+              <View>
+                <Box alignItems="center" style={{ marginLeft: 20 }}>
+                  <Button
+                    Image source={require('../../../assets/Recicle.png')}
+                    position="relative"
+                    style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
+                    backgroundColor="#42eb89" mt="7"
+                    onPress={() => navigation.navigate("TelaArtigos", {})}>
+                  </Button>
+                  <Text style={{ alignItems: 'center' }}>Recicle</Text>
+                </Box>
+              </View>
+            </View>
+            <SearchBar />
+          </KeyboardAvoidingView>
         </ImageBackground>
       </SafeAreaView>
     </NativeBaseProvider>
+
   );
 }
 
@@ -58,6 +78,14 @@ function MenuLateral() {
   return (
     <SafeAreaView>
       <Menu />
+    </SafeAreaView>
+  );
+}
+
+function MenuBar() {
+  return (
+    <SafeAreaView>
+      <Image source={require('../../../assets/logo.png')} style={{ height: 50, width: 50 }} />
     </SafeAreaView>
   );
 }
@@ -109,6 +137,7 @@ export default function App() { // Isso é reponsável pelo menu de navegação 
             headerTitle: '',
             headerStyle: { backgroundColor: '#42eb89' },
             headerTitleStyle: { fontWeight: 'bold', },
+            headerRight: (props) => <MenuBar {...props} />
           }} />
         <Tab.Screen name="Chat" component={ChatScreen} options={{ headerShown: false }} />
       </Tab.Navigator>

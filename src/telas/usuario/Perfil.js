@@ -1,0 +1,72 @@
+import * as React from 'react';
+import { SafeAreaView, Text, Image } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Avatar } from 'react-native-elements';
+import Menu from '../../componentes/Menu';
+
+function User() {
+  return (
+    <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Avatar
+      rounded
+      containerStyle={{height: 160, width: 150}}
+        source={{
+          uri:
+            'https://images.unsplash.com/photo-1501432377862-3d0432b87a14?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGVhZHBvb2x8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+        }}>
+      </Avatar>
+    </SafeAreaView>
+  );
+}
+
+function Conteudo() {
+  return (
+    <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <User/>
+    </SafeAreaView>
+  );
+}
+
+function MenuBar() {
+  return (
+    <SafeAreaView>
+      <Image source={require('../../../assets/logo.png')} style={{ height: 50, width: 50 }} />
+    </SafeAreaView>
+  );
+}
+
+function MenuLateral() {
+  return (
+    <SafeAreaView>
+      <Menu />
+    </SafeAreaView>
+  );
+}
+
+const Stack = createNativeStackNavigator();
+
+function App() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#42eb89',
+        },
+        headerTintColor: '#fff',
+      }}
+    >
+      <Stack.Screen
+        name="Home"
+        component={Conteudo}
+        options={{
+          title: 'Minhas Publicações',
+          headerLeft: (props) => <MenuLateral {...props} />,
+          headerRight: (props) => <MenuBar {...props} />
+        }}
+      />
+    </Stack.Navigator>
+
+  );
+}
+
+export default App;

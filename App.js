@@ -5,6 +5,9 @@ import TelaInicial from './src/telas/PaginasApp/TelaInicial';
 import TelaCad from './src/telas/PaginasApp/TelaCad';
 import TelaLog from './src/telas/PaginasApp/TelaLog';
 import TelaHome from './src/telas/PaginasApp/TelaHome';
+import Perfil from './src/telas/usuario/Perfil';
+import Dados from './src/telas/usuario/Dados';
+import TelaArtigos from './src/telas/PaginasApp/TelaArtigos';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +21,9 @@ export default function App() {
         <Stack.Screen name="Login" component={TelaLog} />
         <Stack.Screen name="Ir" component={TelaHome} options={{ headerShown: false}}/>
         <Stack.Screen name="Bem-Vindo" component={TelaHome} options={{ headerShown: false}}/>
+        <Stack.Screen name="Perfil" component={Perfil} options={{ headerShown: false}}/>
+        <Stack.Screen name="Dados" component={Dados} options={{ headerShown: false }}/>
+        <Stack.Screen name="TelaArtigos" component={TelaArtigos} options={{ headerShown: false }}/>
       </Stack.Navigator> 
     </NavigationContainer >
 
