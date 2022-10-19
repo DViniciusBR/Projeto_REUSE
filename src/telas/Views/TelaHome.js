@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { Text, View, SafeAreaView, ImageBackground, Image, TouchableOpacity } from 'react-native';
-import { NativeBaseProvider, Button, Box, KeyboardAvoidingView } from "native-base";
+import { NativeBaseProvider, Button, Box } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
 import Menu from '../../componentes/Menu';
-import Atalho from '../../componentes/Atalho';
 import Carrosel from '../../componentes/Carrosel';
 import SearchBar from '../../componentes/SearchBar';
 
@@ -26,48 +25,48 @@ function HomeScreen({ navigation }) {
     <NativeBaseProvider>
       <SafeAreaView style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-around' }}>
         <ImageBackground source={require('../../../assets/telainicial.png')} style={{ resizeMode: "cover", flex: 1 }} imageStyle={{ opacity: 0.5 }}>
-          <KeyboardAvoidingView behavior={Platform.OS === "android" ? "padding" : "height"}>
-            <TouchableOpacity
-              activeOpacity={0.8}
-              onPress={() => navigation.navigate('TelaArtigos', {})}>
-              <Carrosel />
-            </TouchableOpacity>
-            <View flexDirection="row" alignSelf="flex-start">
-              <Box alignItems="center" style={{ marginLeft: 10 }}>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate('TelaArtigos', {})}>
+            <Carrosel />
+          </TouchableOpacity>
+          <View flexDirection="row" alignSelf="flex-start">
+            <Box alignItems="center" style={{ marginLeft: 10 }}>
+              <Button
+                position="relative"
+                style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
+                backgroundColor="#42eb89" mt="7"
+                onPress={() => navigation.navigate("TelaArtigos", {})}>
+                <Image source={require('../../../assets/desapega.png')} style={{ height: 50, width: 50 }} />
+              </Button>
+              <Text style={{ alignItems: 'center', fontWeight: '500' }}>Desapega</Text>
+            </Box>
+            <View>
+              <Box alignItems="center" style={{ marginLeft: 20 }}>
+                <Button
+                  position="relative"
+                  style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
+                  backgroundColor="#42eb89" mt="7"
+                  onPress={() => navigation.navigate("Dados", {})}>
+                  <Image source={require('../../../assets/salveomundo.png')} style={{ height: 50, width: 50 }} />
+                </Button>
+                <Text style={{ alignItems: 'center', fontWeight: '500' }}>Salve o mundo</Text>
+              </Box>
+            </View>
+            <View>
+              <Box alignItems="center" style={{ marginLeft: 20 }}>
                 <Button
                   position="relative"
                   style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
                   backgroundColor="#42eb89" mt="7"
                   onPress={() => navigation.navigate("TelaArtigos", {})}>
+                  <Image source={require('../../../assets/recicle.png')} style={{ height: 50, width: 50 }} />
                 </Button>
-                <Text style={{ alignItems: 'center' }}>Desapega</Text>
+                <Text style={{ alignItems: 'center', fontWeight: '500' }}>Recicle</Text>
               </Box>
-              <View>
-                <Box alignItems="center" style={{ marginLeft: 20 }}>
-                  <Button
-                    position="relative"
-                    style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
-                    backgroundColor="#42eb89" mt="7"
-                    onPress={() => navigation.navigate("Dados", {})}>
-                  </Button>
-                  <Text style={{ alignItems: 'center' }}>Salve o mundo</Text>
-                </Box>
-              </View>
-              <View>
-                <Box alignItems="center" style={{ marginLeft: 20 }}>
-                  <Button
-                    Image source={require('../../../assets/Recicle.png')}
-                    position="relative"
-                    style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
-                    backgroundColor="#42eb89" mt="7"
-                    onPress={() => navigation.navigate("TelaArtigos", {})}>
-                  </Button>
-                  <Text style={{ alignItems: 'center' }}>Recicle</Text>
-                </Box>
-              </View>
             </View>
-            <SearchBar />
-          </KeyboardAvoidingView>
+          </View>
+          <SearchBar />
         </ImageBackground>
       </SafeAreaView>
     </NativeBaseProvider>
@@ -128,16 +127,17 @@ export default function App() { // Isso é reponsável pelo menu de navegação 
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: '#42eb89',
-          tabBarInactiveTintColor: 'gray',
+          tabBarInactiveTintColor: 'white',
+          tabBarStyle: { backgroundColor: 'black' }
         })}
       >
         <Tab.Screen name="Jogo" component={JogoScreen} options={{ headerShown: false }} />
         <Tab.Screen name="Home" component={HomeScreen}
           options={{
             headerLeft: (props) => <MenuLateral {...props} />,
-            headerTitle: '',
+            headerTitle: 'RE-USE',
             headerStyle: { backgroundColor: '#42eb89' },
-            headerTitleStyle: { fontWeight: 'bold', },
+            headerTitleStyle: { fontWeight: 'bold' },
             headerRight: (props) => <MenuBar {...props} />
           }} />
         <Tab.Screen name="Chat" component={ChatScreen} options={{ headerShown: false }} />

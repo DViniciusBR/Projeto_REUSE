@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TelaInicial from './src/telas/PaginasApp/TelaInicial';
-import TelaCad from './src/telas/PaginasApp/TelaCad';
-import TelaLog from './src/telas/PaginasApp/TelaLog';
-import TelaHome from './src/telas/PaginasApp/TelaHome';
+import TelaInicial from './src/telas/Views/TelaInicial';
+import TelaCad from './src/telas/Views/TelaCad';
+import TelaLog from './src/telas/Views/TelaLog';
+import TelaHome from './src/telas/Views/TelaHome';
 import Perfil from './src/telas/usuario/Perfil';
 import Dados from './src/telas/usuario/Dados';
-import TelaArtigos from './src/telas/PaginasApp/TelaArtigos';
+import TelaArtigos from './src/telas/Views/TelaArtigos';
 
 const Stack = createNativeStackNavigator();
 

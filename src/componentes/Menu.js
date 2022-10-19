@@ -3,14 +3,14 @@ import { Menu, HamburgerIcon, Box, Pressable, Center, NativeBaseProvider, Divide
 import { Text } from 'react-native';
 import { Octicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
-function Example() {
+function Atalho() {
   return <Box w="90%" height="25" alignItems="center">
     <Menu w="190" trigger={triggerProps => {
       return <Pressable accessibilityLabel="More options menu" {...triggerProps}>
         <HamburgerIcon size={35} />
       </Pressable>;
     }}>
-      <Menu.Item onPress={() => {alert('Teste')}}>
+      <Menu.Item>
       <Icon as={<Octicons name={"person"} size={5} mr="2"/>}/>
         <Text>Eu</Text>
       </Menu.Item>
@@ -37,7 +37,7 @@ export default () => {
   return (
     <NativeBaseProvider>
       <Center flex={1} px="3">
-        <Example />
+        <Atalho/>
       </Center>
     </NativeBaseProvider>
   );

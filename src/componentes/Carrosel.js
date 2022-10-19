@@ -14,12 +14,12 @@ const data = [
   {
     id: 2,
     name: 'JavaScript',
-    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGaPiXhsm0rHihP69_XOBo3uclLc3TNuMIJA&usqp=CAU',
+    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7TvdnG77Cb8YVRtz0r7VSUEo6-zTdcCQ5A&usqp=CAU',
   },
   {
     id: 3,
     name: 'Node JS',
-    url: 'https://www.teraambiental.com.br/hs-fs/hubfs/Reciclar%2c%20reaproveitar%2c%20reutilizar.png?width=614&name=Reciclar%2c%20reaproveitar%2c%20reutilizar.png',
+    url: 'https://enfeitedecora.com.br/wp-content/uploads/2021/11/decoracao-com-reciclagem2.jpg',
   },
 ];
 
@@ -67,3 +67,11 @@ const App = ({navigation}) => {
 };
 
 export default App;
+
+/* <FlatList
+contentContainerStyle={{paddingLeft: 20}}
+horizontal
+showsHorizontalScrollIndicator={false}
+data={places}
+renderItem={({item}) => <Card place={item} />}
+/>*/
