@@ -1,23 +1,18 @@
 import * as React from 'react';
-import { View, Text, Image, BackgroundColor, TouchableOpacity } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Menu from '../../componentes/Menu';
 
-function TelaPrincipal({ navigation }) {
+function DadosConfig() {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
-      <Image source={require('../../../assets/email.png')} style={{ height: 50, width: 50, marginleft: 10 }} />
-      <Text style={{ flexDirection: 'row' }}>email.usuario@exemplo.com</Text>
-
-      <Image source={require('../../../assets/user.png')} style={{ height: 50, width: 50 }} />
-      <Text>Nome.usuario</Text>
-
       <View>
-        <TouchableOpacity onPress={() => navigation.navigate('DadosConfig', {})}>
         <Image source={require('../../../assets/dadosuser.png')} style={{ height: 50, width: 50 }} />
-        </TouchableOpacity>
+        <Text>Nome: Nome.Completo.do.usuario</Text>
+        <Text>Email: Email.do.usuario</Text>
+        <Text>Cidade: Cidade.do.usuario</Text>
+        <Text>Nome de usuário: Nome.de.usuario</Text>
       </View>
-      <Text>Dados pessoais</Text>
     </View>
   );
 }
@@ -52,7 +47,7 @@ function App() {
     >
       <Stack.Screen
         name="Home"
-        component={TelaPrincipal}
+        component={DadosConfig}
         options={{
           title: 'Meus Dados',
           headerLeft: (props) => <MenuLateral {...props} />,

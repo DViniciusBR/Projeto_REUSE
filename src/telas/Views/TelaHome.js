@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
 import Menu from '../../componentes/Menu';
 import Carrosel from '../../componentes/Carrosel';
-import SearchBar from '../../componentes/SearchBar';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -23,7 +23,7 @@ function JogoScreen() {
 function HomeScreen({ navigation }) {
   return (
     <NativeBaseProvider>
-      <SafeAreaView style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-around' }}>
+      <SafeAreaView style={{ flex: 1, flexDirection: 'row' }}>
         <ImageBackground source={require('../../../assets/telainicial.png')} style={{ resizeMode: "cover", flex: 1 }} imageStyle={{ opacity: 0.5 }}>
           <TouchableOpacity
             activeOpacity={0.8}
@@ -36,7 +36,7 @@ function HomeScreen({ navigation }) {
                 position="relative"
                 style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
                 backgroundColor="#42eb89" mt="7"
-                onPress={() => navigation.navigate("TelaArtigos", {})}>
+                onPress={() => navigation.navigate("TelaDesapega", {})}>
                 <Image source={require('../../../assets/desapega.png')} style={{ height: 50, width: 50 }} />
               </Button>
               <Text style={{ alignItems: 'center', fontWeight: '500' }}>Desapega</Text>
@@ -48,7 +48,7 @@ function HomeScreen({ navigation }) {
                   style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
                   backgroundColor="#42eb89" mt="7"
                   onPress={() => navigation.navigate("Dados", {})}>
-                  <Image source={require('../../../assets/salveomundo.png')} style={{ height: 50, width: 50 }} />
+                  <Image source={require('../../../assets/mundo.png')} style={{ height: 50, width: 50 }} />
                 </Button>
                 <Text style={{ alignItems: 'center', fontWeight: '500' }}>Salve o mundo</Text>
               </Box>
@@ -66,7 +66,6 @@ function HomeScreen({ navigation }) {
               </Box>
             </View>
           </View>
-          <SearchBar />
         </ImageBackground>
       </SafeAreaView>
     </NativeBaseProvider>
