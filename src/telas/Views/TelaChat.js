@@ -24,35 +24,43 @@ function Chat() {
 function Basic() {
     const data = [{
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-        fullName: 'Afreen Khan',
+        fullName: 'Yoni',
         timeStamp: '12:47 PM',
-        recentText: 'Good Day!',
-        avatarUrl: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+        recentText: 'Iae boy',
+        avatarUrl: 'https://pps.whatsapp.net/v/t61.24694-24/296359524_787911809016138_8228851767560518986_n.jpg?ccb=11-4&oh=01_AdTwSIhUBFQsTJOGxEzrnyqD8JsobaaehJHDJw_gEuXvWw&oe=635EE9F0'
     }, {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-        fullName: 'Sujita Mathur',
+        fullName: 'Witoria',
         timeStamp: '11:11 PM',
-        recentText: 'Cheer up, there!',
-        avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyEaZqT3fHeNrPGcnjLLX1v_W4mvBlgpwxnA&usqp=CAU'
+        recentText: 'De fato',
+        avatarUrl: 'https://pps.whatsapp.net/v/t61.24694-24/293613765_409323981221115_6366687122801875475_n.jpg?ccb=11-4&oh=01_AdTIym6Xif_nrI2YF9-vGUZmkXXr5dMa3uE1eI-kEyFUFg&oe=635EF11D'
     }, {
         id: '58694a0f-3da1-471f-bd96-145571e29d72',
-        fullName: 'Anci Barroco',
+        fullName: 'Robinho',
         timeStamp: '6:22 PM',
-        recentText: 'Good Day!',
-        avatarUrl: 'https://miro.medium.com/max/1400/0*0fClPmIScV5pTLoE.jpg'
+        recentText: 'Cachorro?',
+        avatarUrl: 'https://pps.whatsapp.net/v/t61.24694-24/298656735_903910974355879_49304896862257437_n.jpg?ccb=11-4&oh=01_AdQLydXK5a67iClo1NtLPU7T_cERBNZ7EMjsBaycF6td8g&oe=635EF738'
     }, {
         id: '68694a0f-3da1-431f-bd56-142371e29d72',
-        fullName: 'Aniket Kumar',
+        fullName: 'Adilla',
         timeStamp: '8:56 PM',
-        recentText: 'All the best',
-        avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr01zI37DYuR8bMV5exWQBSw28C1v_71CAh8d7GP1mplcmTgQA6Q66Oo--QedAN1B4E1k&usqp=CAU'
+        recentText: 'OI OI',
+        avatarUrl: 'https://pps.whatsapp.net/v/t61.24694-24/310189739_796111038381474_3361952456908650731_n.jpg?ccb=11-4&oh=01_AdS8YZPEW1nh9oL891JIgCr30aYDTlFeOtbqa13TFGtKcg&oe=635F02EA'
     }, {
         id: '28694a0f-3da1-471f-bd96-142456e29d72',
-        fullName: 'Kiara',
+        fullName: 'Ruan',
         timeStamp: '12:47 PM',
-        recentText: 'I will call today.',
-        avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU'
-    }];
+        recentText: 'fICA TRANQUILO CARA',
+        avatarUrl: 'https://pps.whatsapp.net/v/t61.24694-24/310995453_197555676023544_7110070616467924006_n.jpg?ccb=11-4&oh=01_AdTDWtzGEys4DJLKtiKGBgXGNFkG-Q11aRv_6joLxl2wxA&oe=635EEE40'
+    
+    
+     }, {
+            id: '68694a0f-3da1-431f-bd56-142371e29d72',
+            fullName: 'Bel Marques',
+            timeStamp: '16:01 PM',
+            recentText: ' A gente vai arrasar no TCC ',
+            avatarUrl: 'https://pps.whatsapp.net/v/t61.24694-24/175660116_126590506851842_1570325675590088307_n.jpg?ccb=11-4&oh=01_AdRek7Q_uG7QsEWVqD4_xxTDK2sAuf70_ewNR0n1Ec9D1Q&oe=635F018D'
+        }, ];
     const [listData, setListData] = useState(data);
 
     const closeRow = (rowMap, rowKey) => {

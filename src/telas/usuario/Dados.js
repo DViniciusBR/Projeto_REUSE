@@ -6,7 +6,7 @@ import Menu from '../../componentes/Menu';
 function TelaPrincipal({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
-      <Image source={require('../../../assets/email.png')} style={{ height: 50, width: 50, marginleft: 10 }} />
+      <Image source={require('../../../assets/email.png')} style={{ height: 50, width: 50, padding: 10 }} />
       <Text style={{ flexDirection: 'row' }}>email.usuario@exemplo.com</Text>
 
       <Image source={require('../../../assets/user.png')} style={{ height: 50, width: 50 }} />
