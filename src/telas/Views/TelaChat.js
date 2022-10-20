@@ -3,16 +3,16 @@ import { NativeBaseProvider, Box, Text, Pressable, Heading, Icon, HStack, Avatar
 import { SwipeListView } from 'react-native-swipe-list-view';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
 
-function Example() {
+function Chat() {
     const [mode, setMode] = useState('Basic');
-    return <Center h="290px">
+    return <Center h="800px" w='300%'>
         <Box _dark={{
-            bg: 'coolGray.800'
+            bg: 'coolGray.900'
         }} _light={{
             bg: 'white'
         }} flex="1" safeAreaTop maxW="400px" w="100%">
             <Heading p="4" pb="3" size="lg">
-                Inbox
+                Chat
             </Heading>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Basic />
@@ -117,7 +117,7 @@ function Basic() {
             <VStack alignItems="center" space={2}>
                 <Icon as={<Entypo name="dots-three-horizontal" />} size="xs" color="coolGray.800" />
                 <Text fontSize="xs" fontWeight="medium" color="coolGray.800">
-                    More
+                    Mais
                 </Text>
             </VStack>
         </Pressable>
@@ -127,14 +127,19 @@ function Basic() {
             <VStack alignItems="center" space={2}>
                 <Icon as={<MaterialIcons name="delete" />} color="white" size="xs" />
                 <Text color="white" fontSize="xs" fontWeight="medium">
-                    Delete
+                    Apagar
                 </Text>
             </VStack>
         </Pressable>
     </HStack>;
 
     return <Box bg="white" safeArea flex="1">
-        <SwipeListView data={listData} renderItem={renderItem} renderHiddenItem={renderHiddenItem} rightOpenValue={-130} previewRowKey={'0'} previewOpenValue={-40} previewOpenDelay={3000} onRowDidOpen={onRowDidOpen} />
+        <SwipeListView
+            data={listData} renderItem={renderItem}
+            renderHiddenItem={renderHiddenItem} rightOpenValue={-130}
+            previewRowKey={'0'} previewOpenValue={-40}
+            previewOpenDelay={1000} onRowDidOpen={onRowDidOpen}>
+        </SwipeListView>
     </Box>;
 }
 
@@ -142,7 +147,7 @@ export default () => {
     return (
         <NativeBaseProvider>
             <Center flex={1} px="3">
-                <Example />
+                <Chat />
             </Center>
         </NativeBaseProvider>
     );

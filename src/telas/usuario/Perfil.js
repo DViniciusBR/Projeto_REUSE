@@ -9,7 +9,7 @@ function User() {
     <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Avatar
       rounded
-      containerStyle={{height: 160, width: 150}}
+      containerStyle={{height: 80, width: 75}}
         source={{
           uri:
             'https://images.unsplash.com/photo-1501432377862-3d0432b87a14?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGVhZHBvb2x8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
