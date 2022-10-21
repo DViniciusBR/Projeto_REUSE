@@ -11,7 +11,7 @@ function Chat() {
         }} _light={{
             bg: 'white'
         }} flex="1" safeAreaTop maxW="400px" w="100%">
-            <Heading p="4" pb="3" size="lg">
+            <Heading p="4" size="lg">
                 Chat
             </Heading>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -83,7 +83,6 @@ function Basic() {
 
     const renderItem = ({
         item,
-        index
     }) => <Box>
             <Pressable onPress={() => console.log('You touched me')} _dark={{
                 bg: 'coolGray.800'

@@ -68,7 +68,7 @@ function MenuLateral() {
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+function Desapega() {
     return (
         <Stack.Navigator
             screenOptions={{
@@ -92,4 +92,4 @@ function App() {
     );
 }
 
-export default App;
+export default Desapega;
