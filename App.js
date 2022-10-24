@@ -7,7 +7,7 @@ import TelaLog from './src/telas/Views/TelaLog';
 import TelaHome from './src/telas/Views/TelaHome';
 import Perfil from './src/telas/usuario/Perfil';
 import Dados from './src/telas/usuario/Dados';
-import DadosConfig from './src/telas/config/DadosConfig';
+import DadosConfig from './src/telas/usuario/DadosConfig';
 import TelaArtigos from './src/telas/Views/TelaArtigos';
 import TelaDesapega from './src/telas/Views/TelaDesapega';
 

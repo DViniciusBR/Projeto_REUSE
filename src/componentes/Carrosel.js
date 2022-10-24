@@ -1,77 +1,40 @@
-import React, { useState, useRef } from 'react';
-import { Text, Dimensions, Image, SafeAreaView } from 'react-native';
-import Carousel, { Pagination } from 'react-native-snap-carousel';
+import React, { useState } from 'react';
+import { Dimensions, Image, ScrollView, TouchableOpacity, View, Text } from 'react-native';
+import CATEGORIES from '../config/CATEGORIES';
+import SPACING from '../config/SPACING';
 
-export const SLIDER_WIDTH = Dimensions.get('window').width + 30;
-export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.6);
+const WIDTH = Dimensions.get('screen').width
 
-const data = [
-  {
-    id: 1,
-    name: 'Diferença entre reciclar e reutilizar',
-    url: 'https://www.teraambiental.com.br/hs-fs/hubfs/Reciclar%2c%20reaproveitar%2c%20reutilizar.png?width=614&name=Reciclar%2c%20reaproveitar%2c%20reutilizar.png',
-  },
-  {
-    id: 2,
-    name: 'JavaScript',
-    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7TvdnG77Cb8YVRtz0r7VSUEo6-zTdcCQ5A&usqp=CAU',
-  },
-  {
-    id: 3,
-    name: 'Node JS',
-    url: 'https://enfeitedecora.com.br/wp-content/uploads/2021/11/decoracao-com-reciclagem2.jpg',
-  },
-];
-
-const renderItem = ({ item }) => {
+const HomeCarrossel = () => {
+  const [activeCategory, setActiveCategory] = useState(0)
   return (
-    <SafeAreaView
-      style={{
-        borderWidth: 3.5, padding: 1,
-        height: 250, width: 215,
-        borderRadius: 30, alignItems: 'center'
-      }}>
-      <Image source={{ uri: item.url }} style={{ width: 210, height: 243, borderRadius: 30 }} />
-      <Text style={{ marginVertical: 10, fontSize: 20, fontWeight: 'bold' }}>
-        {item.name}
-      </Text>
-    </SafeAreaView>
-  );
-};
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      snapToInterval={WIDTH * 0.5}
+      decelerationRate='fast'
+      pagingEnabled
+      style={{ marginVertical: SPACING * 4, marginLeft: 20 }}
+    >
+      {CATEGORIES[activeCategory].tours.map((tour, index) => (
+        <TouchableOpacity style={{
+          width: WIDTH * 0.6,
+          height: WIDTH * 0.8,
+          overflow: "hidden",
+          borderRadius: SPACING * 2,
+          marginRight: SPACING * 2,
+        }}
+          key={index}
+        >
+          <View style={{ position: 'absolute', zIndex: 1, height: "100%", width: '100%', justifyContent: 'center'}}>
+            <Text style={{ fontSize: SPACING * 1.7, marginLeft: 10, fontWeight: '500', color: 'black' }}>{tour.title}</Text>
+          </View>
+          <Image source={tour.image} style={{ width: '100%', height: '100%', borderRadius: 30, opacity: 0.8 }} />
+        </TouchableOpacity>
+      ))
+      }
+    </ScrollView >
+  )
+}
 
-const App = ({navigation}) => {
-  const [index, setIndex] = useState(0);
-  const isCarousel = useRef(null);
-  return (
-    <>
-        <Carousel
-          ref={isCarousel}
-          data={data}
-          renderItem={renderItem}
-          sliderWidth={SLIDER_WIDTH}
-          itemWidth={ITEM_WIDTH}
-          onSnapToItem={index => setIndex(index)}
-        />
-        <Pagination
-          dotsLength={data.length}
-          activeDotIndex={index}
-          carouselRef={isCarousel}
-          dotStyle={{ width: 20, height: 8, borderRadius: 5, marginHorizontal: 8, backgroundColor: 'black' }}
-          tappableDots={true}
-          inactiveDotStyle={{ backgroundColor: 'white' }}
-          inactiveDotOpacity={0.7}
-          inactiveDotScale={0.6}
-        />
-    </>
-  );
-};
-
-export default App;
-
-/* <FlatList
-contentContainerStyle={{paddingLeft: 20}}
-horizontal
-showsHorizontalScrollIndicator={false}
-data={places}
-renderItem={({item}) => <Card place={item} />}
-/>*/
+export default HomeCarrossel;

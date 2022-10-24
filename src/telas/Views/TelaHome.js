@@ -25,11 +25,11 @@ function HomeScreen({ navigation }) {
     <NativeBaseProvider>
       <SafeAreaView style={{ flex: 1, flexDirection: 'row' }}>
         <ImageBackground source={require('../../../assets/telainicial.png')} style={{ resizeMode: "cover", flex: 1 }} imageStyle={{ opacity: 0.5 }}>
-          <TouchableOpacity
+          <View
             activeOpacity={0.8}
             onPress={() => navigation.navigate('TelaArtigos', {})}>
             <Carrosel />
-          </TouchableOpacity>
+          </View>
           <View flexDirection="row" alignSelf="flex-start">
             <Box alignItems="center" style={{ marginLeft: 10 }}>
               <Button
