@@ -1,60 +1,28 @@
-import React from 'react';
-import { StyleSheet, Text, ImageBackground, SafeAreaView, Image } from 'react-native';
-import { NativeBaseProvider, Button, Box } from "native-base";
+import * as React from 'react';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function TelaInicial({ navigation }) {
-
+function Config({ navigation }) {
   return (
-    <NativeBaseProvider>
-      <SafeAreaView style={styles.container}>
-        <ImageBackground source={require('../../assets/telainicial.png')} resizeMode="cover" style={styles.fundo}>
-          <Image source={require('../../assets/logo.png')} resizeMode="cover" style={styles.logo}></Image>
-          <Text style={styles.titulo}>Re-Use</Text>
+    <View style={{ flex: 1, justifyContent: 'center' }}>
+      <View style={{ flexDirection: 'row', marginLeft: 10 }}>
+        <Image source={require('../../../assets/email.png')} style={{ height: 50, width: 50, padding: 10 }} />
+        <Text>email.usuario@exemplo.com</Text>
+      </View>
 
-          <Box alignItems="center">
-            <Button backgroundColor="black" mt="7"
-            onPress={() => navigation.navigate("Cadastre-se", {})} >
-              <Text style={styles.TitBotao}>Cadastre-se</Text>
-            </Button>
-            <Button backgroundColor="black" mt="7"
-            onPress={() => navigation.navigate("Login", {})} >
-              <Text style={styles.TitBotao}>Login</Text>
-            </Button>
+      <View style={{ flexDirection: 'row', marginLeft: 10 }}>
+        <Image source={require('../../../assets/user.png')} style={{ height: 50, width: 50 }} />
+        <Text>Nome.usuario</Text>
+      </View>
 
-          </Box>
-        </ImageBackground>
-      </SafeAreaView>
-    </NativeBaseProvider>
+      <View style={{ flexDirection: 'row', marginLeft: 15 }}>
+        <TouchableOpacity onPress={() => navigation.navigate('DadosConfig', {})}>
+          <Image source={require('../../../assets/dadosuser.png')} style={{ height: 50, width: 50 }} />
+        </TouchableOpacity>
+        <Text>Dados pessoais</Text>
+      </View>
+    </View>
   );
-};
+}
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  fundo: {
-    flex: 1,
-    justifyContent: "center"
-  },
-  logo: {
-    width: 100,
-    height: 100,
-    alignSelf: "center",
-    justifyContent: "center",
-  },
-  titulo: {
-    color: "black",
-    fontSize: 30,
-    lineHeight: 84,
-    fontWeight: "bold",
-    alignSelf: "center",
-  },
-  TitBotao: {
-    color: "white",
-    fontSize: 25,
-    lineHeight: 25,
-    fontWeight: "bold",
-    alignSelf: "center",
-  },
-}); 
+export default Config;

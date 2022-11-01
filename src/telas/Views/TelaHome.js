@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Text, View, SafeAreaView, ImageBackground, Image, TouchableOpacity } from 'react-native';
+import { Text, View, SafeAreaView, ImageBackground, Image } from 'react-native';
 import { NativeBaseProvider, Button, Box } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
-import Menu from '../../componentes/Menu';
+import TelaConfig from './TelaConfig';
 import Carrosel from '../../componentes/Carrosel';
 
 
@@ -73,19 +73,19 @@ function HomeScreen({ navigation }) {
   );
 }
 
-function MenuLateral() {
+function ConfigScreen() {
   return (
-    <SafeAreaView>
-      <Menu />
-    </SafeAreaView>
+    <View>
+      <TelaConfig />
+    </View>
   );
 }
 
 function MenuBar() {
   return (
-    <SafeAreaView>
+    <View>
       <Image source={require('../../../assets/logo.png')} style={{ height: 50, width: 50 }} />
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -99,7 +99,7 @@ function ChatScreen() {
   );
 }
 
-export default function App() { // Isso é reponsável pelo menu de navegação da tela inicial(tab navigation)
+export default function Home() { // Isso é reponsável pelo menu de navegação da tela inicial(tab navigation)
   return (
     <NativeBaseProvider>
       <Tab.Navigator
@@ -133,13 +133,27 @@ export default function App() { // Isso é reponsável pelo menu de navegação 
         <Tab.Screen name="Jogo" component={JogoScreen} options={{ headerShown: false }} />
         <Tab.Screen name="Home" component={HomeScreen}
           options={{
-            headerLeft: (props) => <MenuLateral {...props} />,
             headerTitle: 'RE-USE',
             headerStyle: { backgroundColor: '#42eb89' },
             headerTitleStyle: { fontWeight: 'bold' },
             headerRight: (props) => <MenuBar {...props} />
           }} />
-        <Tab.Screen name="Chat" component={ChatScreen} options={{ headerShown: false }} />
+        <Tab.Screen name="Chat" component={ChatScreen}  
+        options={{
+          headerTitle: 'Chat',
+          headerStyle: { backgroundColor: '#42eb89' },
+          headerTitleStyle: { fontWeight: 'bold' },
+          headerRight: (props) => <MenuBar {...props} />
+        }}
+        />
+        <Tab.Screen name="Config" component={ConfigScreen}
+        options={{
+          headerTitle: 'Configurações',
+          headerStyle: { backgroundColor: '#42eb89' },
+          headerTitleStyle: { fontWeight: 'bold' },
+          headerRight: (props) => <MenuBar {...props} />
+        }}
+        />
       </Tab.Navigator>
     </NativeBaseProvider>
   );
