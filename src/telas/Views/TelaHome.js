@@ -4,8 +4,9 @@ import { NativeBaseProvider, Button, Box } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
-import TelaConfig from './TelaConfig';
 import Carrosel from '../../componentes/Carrosel';
+import Estilos from '../../componentes/estilos';
+import Jogo from './TelaJogo';
 
 
 const Tab = createBottomTabNavigator();
@@ -24,7 +25,7 @@ function HomeScreen({ navigation }) {
   return (
     <NativeBaseProvider>
       <SafeAreaView style={{ flex: 1, flexDirection: 'row' }}>
-        <ImageBackground source={require('../../../assets/telainicial.png')} style={{ resizeMode: "cover", flex: 1 }} imageStyle={{ opacity: 0.5 }}>
+        <ImageBackground source={require('../../../assets/images/telainicial.png')} style={{ resizeMode: "cover", flex: 1 }} imageStyle={{ opacity: 0.5 }}>
           <View
             activeOpacity={0.8}
             onPress={() => navigation.navigate('TelaArtigos', {})}>
@@ -37,7 +38,7 @@ function HomeScreen({ navigation }) {
                 style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
                 backgroundColor="#42eb89" mt="7"
                 onPress={() => navigation.navigate("TelaDesapega", {})}>
-                <Image source={require('../../../assets/desapega.png')} style={{ height: 50, width: 50 }} />
+                <Image source={require('../../../assets/images/desapega.png')} style={{ height: 50, width: 50 }} />
               </Button>
               <Text style={{ alignItems: 'center', fontWeight: '500' }}>Desapega</Text>
             </Box>
@@ -48,7 +49,7 @@ function HomeScreen({ navigation }) {
                   style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
                   backgroundColor="#42eb89" mt="7"
                   onPress={() => navigation.navigate("Dados", {})}>
-                  <Image source={require('../../../assets/mundo.png')} style={{ height: 50, width: 50 }} />
+                  <Image source={require('../../../assets/images/mundo.png')} style={{ height: 50, width: 50 }} />
                 </Button>
                 <Text style={{ alignItems: 'center', fontWeight: '500' }}>Salve o mundo</Text>
               </Box>
@@ -60,7 +61,7 @@ function HomeScreen({ navigation }) {
                   style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
                   backgroundColor="#42eb89" mt="7"
                   onPress={() => navigation.navigate("Perfil", {})}>
-                  <Image source={require('../../../assets/recicle.png')} style={{ height: 50, width: 50 }} />
+                  <Image source={require('../../../assets/images/recicle.png')} style={{ height: 50, width: 50 }} />
                 </Button>
                 <Text style={{ alignItems: 'center', fontWeight: '500' }}>Recicle</Text>
               </Box>
@@ -76,7 +77,8 @@ function HomeScreen({ navigation }) {
 function ConfigScreen() {
   return (
     <View>
-      <TelaConfig />
+      
+      <Estilos/>
     </View>
   );
 }
@@ -84,7 +86,7 @@ function ConfigScreen() {
 function MenuBar() {
   return (
     <View>
-      <Image source={require('../../../assets/logo.png')} style={{ height: 50, width: 50 }} />
+      <Image source={require('../../../assets/images/logo.png')} style={{ height: 50, width: 50 }} />
     </View>
   );
 }

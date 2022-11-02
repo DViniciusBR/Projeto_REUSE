@@ -27,8 +27,8 @@ export default function TelaLog({ navigation }) {
                     InputRightElement={<Pressable onPress={() => setShow(!show)}>
                       <Icon as={<MaterialIcons name={show ? "visibility" : "visibility-off"} />} size={5} mr="2" color="muted.400" /></Pressable>} />
                 </FormControl>
-                <Link _text={{ fontSize: 14, fontWeight: "500", color: "indigo.500" }} alignSelf="flex-end" mt="1"
-                  href="https://support.google.com/accounts/answer/41078?hl=pt-BR&co=GENIE.Platform%3DAndroid">Esqueceu sua senha?</Link>
+                <Button backgroundColor="black" mt="7"
+                  onPress={() => navigation.navigate("TelaSenha", {})}>Esqueci a senha</Button>
 
                 <Button backgroundColor="black" mt="7"
                   onPress={() => navigation.navigate("Bem-Vindo", {})}>Finalizar</Button>

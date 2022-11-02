@@ -7,7 +7,7 @@ function DadosConfig() {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
       <View style={{ flexDirection: 'column', marginLeft: 15 }}>
-          <Image source={require('../../../assets/dadosuser.png')} style={{ height: 50, width: 50 }} />
+          <Image source={require('../../../assets/images/dadosuser.png')} style={{ height: 50, width: 50 }} />
         <Text>Dados pessoais</Text>
         <Text>Dados pessoais</Text>
         <Text>Dados pessoais</Text>
@@ -20,7 +20,7 @@ function DadosConfig() {
 function MenuBar() {
   return (
     <View>
-      <Image source={require('../../../assets/logo.png')} style={{ height: 50, width: 50 }} />
+      <Image source={require('../../../assets/images/logo.png')} style={{ height: 50, width: 50 }} />
     </View>
   );
 }

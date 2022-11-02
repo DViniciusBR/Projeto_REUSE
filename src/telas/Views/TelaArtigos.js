@@ -14,7 +14,7 @@ function HomeScreen() {
 function MenuBar() {
   return (
     <View>
-      <Image source={require('../../../assets/logo.png')} style={{ height: 50, width: 50 }} />
+      <Image source={require('../../../assets/images/logo.png')} style={{ height: 50, width: 50 }} />
     </View>
   );
 }

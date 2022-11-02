@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "111959053686",
+    "firebase_url": "https://re-use-359617-default-rtdb.firebaseio.com",
+    "project_id": "re-use-359617",
+    "storage_bucket": "re-use-359617.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111959053686:android:9af4a128cecfce77181657",
+        "android_client_info": {
+          "package_name": "reuse.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111959053686-qqtisjhgejkao9lq9fb9agmpdf4g7f5j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpZvndBMs1UrfZEGS559n7n7yVl7TclVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111959053686-qqtisjhgejkao9lq9fb9agmpdf4g7f5j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

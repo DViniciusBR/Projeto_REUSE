@@ -7,8 +7,8 @@ export default function TelaInicial({ navigation }) {
   return (
     <NativeBaseProvider>
       <SafeAreaView style={styles.container}>
-        <ImageBackground source={require('../../../assets/telainicial.png')} resizeMode="cover" style={styles.fundo}>
-          <Image source={require('../../../assets/logo.png')} resizeMode="cover" style={styles.logo}></Image>
+        <ImageBackground source={require('../../../assets/images/telainicial.png')} resizeMode="cover" style={styles.fundo}>
+          <Image source={require('../../../assets/images/logo.png')} resizeMode="cover" style={styles.logo}></Image>
           <Text style={styles.titulo}>Re-Use</Text>
           <Box alignItems="center">
             <Button backgroundColor="black" mt="7"
