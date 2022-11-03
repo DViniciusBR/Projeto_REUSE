@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 function Conteudo() {
     return (
         <NativeBaseProvider>
-            <SafeAreaView>
+            <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                     <Box alignItems="center" >
                         <Box w="100%" maxWidth="300px">
                             <FormControl isRequired>

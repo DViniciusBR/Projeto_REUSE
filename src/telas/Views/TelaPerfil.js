@@ -1,28 +1,36 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { ProfileBody } from '../../componentes/perfilBody';
-
 
 const Profile = () => {
     return (
-        <View style={{ width: '100%', height: '100%', backgroundColor: 'white' }}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <View style={{ width: '100%', padding: 10 }}>
                 <ProfileBody
-                    name="rebeca britto"
-                    profileImage={require('../../../assets/images/decoracao.png')}
+                    name="Rebeca Britto"
+                    profileImage={require('../../../assets/images/logo.png')}
                 />
-            </View>
-            <View>
-                <Text
-                    style={{
-                        padding: 10,
-                        letterSpacing: 1,
-                        fontSize: 14,
-                    }}>
-                </Text>
             </View>
         </View>
     );
 };
+
+let squares = [];
+let numberOfSquare = 7;
+
+for (let index = 0; index < numberOfSquare; index++) {
+    squares.push(
+        <View key={index}>
+            <View
+                style={{
+                    width: 130,
+                    height: 150,
+                    marginVertical: 0.5,
+                    backgroundColor: 'black',
+                    opacity: 0.1,
+                }}></View>
+        </View>,
+    );
+}
 
 export default Profile;

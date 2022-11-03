@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import * as ImagePicker from 'expo-image-picker';
 import { firebase } from './PostConfig';
@@ -38,21 +38,20 @@ const UploadScreen = () => {
     };
 
     return (
-        <View>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                {image && <Image source={{ uri: image.uri }} style={{ width: 280, height: 300, borderRadius: 10 }} />}
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <TouchableOpacity style={styles.selectButton} onPress={pickImage}>
-                    <Text style={styles.buttonText}> Pick an image</Text>
-                </TouchableOpacity>
+        <View style={{ flex: 1 }}>
+            <View flexDirection="row" alignSelf="flex-start">
+                <View style={{ alignItems: 'center', marginRight: 15 }}>
+                    <TouchableOpacity position="relative" style={styles.selectButton} onPress={pickImage}>
+                        <Text style={styles.buttonText}>Escolher foto</Text>
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.uploadButton, styles.selectButton} onPress={uploadImage}>
-                    <Text style={styles.buttonText}>
-                        Upload Image
-                    </Text>
-                </TouchableOpacity>
-
+                <View style={{ alignItems: 'center' }}>
+                    <TouchableOpacity position="relative" style={styles.uploadButton, styles.selectButton} onPress={uploadImage}>
+                        <Text style={styles.buttonText}>Publicar</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
+            {image && <Image source={{ uri: image.uri }} style={{ width: 320, height: 200, borderRadius: 10, alignItems: "center" }} />}
         </View>
     )
 }
@@ -73,7 +72,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center',
-        
+
     },
     buttonText: {
         color: 'white',

@@ -1,24 +1,12 @@
 import React from 'react';
-import { View, Text, Image, icon } from 'react-native';
-import Feather from 'react-native-vector-icons/Feather';
+import { View, Text, Image } from 'react-native';
+
 export const ProfileBody = ({
     name,
     profileImage,
 }) => {
     return (
         <View>
-            {icon ? (
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Feather
-                        name="plus-square"
-                        style={{
-                            fontSize: 25,
-                            color: 'black',
-                            paddingHorizontal: 15,
-                        }}
-                    />
-                </View>
-            ) : null}
             <View
                 style={{
                     flexDirection: 'row',
@@ -47,7 +35,10 @@ export const ProfileBody = ({
                         {name}
                     </Text>
                 </View>
-            </View>
+            </View>             
         </View>
     );
 };
+
+let squares = [];
+  let numberOfSquare = 7;

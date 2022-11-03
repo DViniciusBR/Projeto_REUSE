@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { View, Text, Image } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Menu from '../../componentes/Menu';
 
 function DadosConfig() {
   return (
@@ -25,14 +24,6 @@ function MenuBar() {
   );
 }
 
-function MenuLateral() {
-  return (
-    <View>
-      <Menu />
-    </View>
-  );
-}
-
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -50,7 +41,6 @@ function App() {
         component={DadosConfig}
         options={{
           title: 'Meus Dados',
-          headerLeft: (props) => <MenuLateral {...props} />,
           headerRight: (props) => <MenuBar {...props} />
         }}
       />

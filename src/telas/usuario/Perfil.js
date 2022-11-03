@@ -1,22 +1,14 @@
 import * as React from 'react';
 import { SafeAreaView, Text, Image } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Avatar } from 'react-native-elements';
 import Menu from '../../componentes/Menu';
 import Postagens from  './Postagens';
-
-function User() {
-  return (
-    <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-     
-    </SafeAreaView>
-  );
-}
+import TelaPerfil from '../Views/TelaPerfil';
 
 function Conteudo() {
   return (
     <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <User/>
+      <TelaPerfil/>
       <Postagens/> 
     </SafeAreaView>
   );
@@ -55,7 +47,6 @@ function App() {
         component={Conteudo}
         options={{
           title: 'Minhas Publicações',
-          headerLeft: (props) => <MenuLateral {...props} />,
           headerRight: (props) => <MenuBar {...props} />
         }}
       />

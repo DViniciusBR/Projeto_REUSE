@@ -48,7 +48,7 @@ function HomeScreen({ navigation }) {
                   position="relative"
                   style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
                   backgroundColor="#42eb89" mt="7"
-                  onPress={() => navigation.navigate("TelaPerfil", {})}>
+                  onPress={() => navigation.navigate("SalveMundo", {})}>
                   <Image source={require('../../../assets/images/mundo.png')} style={{ height: 50, width: 50 }} />
                 </Button>
                 <Text style={{ alignItems: 'center', fontWeight: '500' }}>Salve o mundo</Text>

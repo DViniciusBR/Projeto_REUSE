@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, VStack, HStack, FormControl, Input, Button, Center, NativeBaseProvider, Pressable, Icon, Link, KeyboardAvoidingView } from "native-base";
+import { Box, VStack, HStack, FormControl, Input, Button, Center, NativeBaseProvider, Pressable, Icon, KeyboardAvoidingView } from "native-base";
 import { Text, SafeAreaView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Platform } from 'react-native';
@@ -33,13 +33,13 @@ export default function TelaLog({ navigation }) {
                 <Button backgroundColor="black" mt="7"
                   onPress={() => navigation.navigate("Bem-Vindo", {})}>Finalizar</Button>
 
-                <HStack mt="6" justifyContent="center">
+                <HStack mt="6" justifyContent="center" >
                   <Text fontSize="sm" color="coolGray.600" _dark={{
                     color: "warmGray.200"
                   }}>
                     Não tem cadastro? </Text>
-                  <Link _text={{ color: "indigo.500", fontWeight: "medium", fontSize: "sm" }}
-                    href="https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fwww.google.com%2F&hl=pt-BR&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp">Cadastre-se</Link>
+                    <Button backgroundColor="black" mt="7"
+                  onPress={() => navigation.navigate("Cadastre-se", {})}>Cadastre-se</Button>
                 </HStack>
               </VStack>
             </Box>

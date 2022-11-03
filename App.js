@@ -12,6 +12,7 @@ import TelaArtigos from './src/telas/Views/TelaArtigos';
 import TelaDesapega from './src/telas/Views/TelaDesapega';
 import TelaSenha from './src/telas/Views/TelaSenha';
 import TelaPerfil from './src/telas/Views/TelaPerfil';
+import SalveMundo from './src/telas/Views/SalveMundo';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +33,7 @@ export default function App() {
         <Stack.Screen name="Dados" component={Dados} options={{ headerShown: false }}/>
         <Stack.Screen name="TelaSenha" component={TelaSenha} options={{ headerShown: false }}/>
         <Stack.Screen name="TelaPerfil" component={TelaPerfil} options={{ headerShown: false }}/>
+        <Stack.Screen name="SalveMundo" component={SalveMundo} options={{ headerShown: false }}/>
       </Stack.Navigator> 
     </NavigationContainer >
 
