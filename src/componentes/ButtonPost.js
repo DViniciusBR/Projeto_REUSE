@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Animated, TouchableWithoutFeedback } from 'react-native';
-import { AntDesign, Entypo } from '@expo/vector-icons';
+import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 
 export default class FloatingButton extends React.Component {
     animation = new Animated.Value(0)
@@ -54,15 +54,9 @@ export default class FloatingButton extends React.Component {
 
         return (
             <View stule={[styles.container, this.props.style]}>
-                <TouchableWithoutFeedback>
-                    <Animated.View style={[styles.button, styles.secondary, heartStyle]}>
-                        <Entypo name='location-pin' size={20} color="#42eb89" />
-                    </Animated.View>
-                </TouchableWithoutFeedback>
-
-                <TouchableWithoutFeedback>
+                <TouchableWithoutFeedback onPress={() => navigation.navigate("Perfil", {})}>
                     <Animated.View style={[styles.button, styles.secondary, pinStyle]}>
-                        <Entypo name='location-pin' size={20} color="#42eb89" />
+                        <MaterialIcons name='post-add' size={20} color="#42eb89" />
                     </Animated.View>
                 </TouchableWithoutFeedback>
 

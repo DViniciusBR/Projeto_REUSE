@@ -47,6 +47,10 @@ export default function TelaCad({ navigation }) {
                       <Icon as={<MaterialIcons name={show ? "visibility" : "visibility-off"} />}
                         size={5} mr="2" color="muted.400" /></Pressable>} />
                 </FormControl>
+                <HStack space={6}>
+                <Checkbox shadow={2} value="disable" acessibilityLabel="Confirmação dos termos" defaultIsChecked>
+                  <Link href="https://www.gstatic.com/policies/privacy/pdf/20221004/a2n853ky/google_privacy_policy_pt-BR_br.pdf">Li e estou de acordo com os Termos de Uso e Política de privacidade</Link></Checkbox>
+              </HStack>
                 <Button backgroundColor="black" mt="7"
                   onPress={() => navigation.navigate("Bem-Vindo", {})}>Finalizar</Button>
               </VStack>

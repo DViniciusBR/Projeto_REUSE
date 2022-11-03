@@ -6,8 +6,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
 import Carrosel from '../../componentes/Carrosel';
 import Estilos from '../../componentes/estilos';
-import Jogo from './TelaJogo';
-
+import TelaJogo from './TelaJogo';
+import Dados from '../usuario/Dados';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +16,7 @@ const Tab = createBottomTabNavigator();
 function JogoScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Tela com a animação</Text>
+      <TelaJogo/>
     </View>
   );
 }
@@ -48,7 +48,7 @@ function HomeScreen({ navigation }) {
                   position="relative"
                   style={{ padding: 1, height: 120, width: 110, borderRadius: 30 }}
                   backgroundColor="#42eb89" mt="7"
-                  onPress={() => navigation.navigate("Dados", {})}>
+                  onPress={() => navigation.navigate("TelaPerfil", {})}>
                   <Image source={require('../../../assets/images/mundo.png')} style={{ height: 50, width: 50 }} />
                 </Button>
                 <Text style={{ alignItems: 'center', fontWeight: '500' }}>Salve o mundo</Text>
@@ -76,9 +76,9 @@ function HomeScreen({ navigation }) {
 
 function ConfigScreen() {
   return (
-    <View>
-      
-      <Estilos/>
+    <View style={{ flex: 1, justifyContent: 'center' }}>
+        <Dados/>
+        
     </View>
   );
 }

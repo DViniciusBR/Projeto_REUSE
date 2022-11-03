@@ -1,66 +1,81 @@
-import React, { useState } from 'react';
-import { Text, StyleSheet, TouchableOpacity, View, TextInput } from 'react-native';
+import * as React from 'react';
+import { SafeAreaView, Button, Image, StyleSheet, Text } from 'react-native';
+import { FormControl, Input, Stack, Box, NativeBaseProvider } from "native-base";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { useForm, Controller } from 'react-hook-form'
-
-export default function RedefinirSenha() {
-    const { control, handleSubmit } = useForm({})
-
-    function handleSignIn(data) {
-        console.log(data);
-    }
-
+function Conteudo() {
     return (
-        <View style={styles.container}>
+        <NativeBaseProvider>
+            <SafeAreaView>
+                    <Box alignItems="center" >
+                        <Box w="100%" maxWidth="300px">
+                            <FormControl isRequired>
+                                <Stack mx="4">
+                                    <FormControl.Label>Insira um e-mail válido</FormControl.Label>
+                                    <Input type="email" placeholder="endereço de email" />
+                                </Stack>
+                            </FormControl>
+                           <Text>Recuperar senha</Text>
+                        </Box>
+                    </Box>
+            </SafeAreaView>
+        </NativeBaseProvider>
+    );
+}
 
-            <Text style={styles.title}>Esqueci Minha Senha!</Text>
+function MenuBar() {
+    return (
+        <SafeAreaView>
+            <Image source={require('../../../assets/images/logo.png')} style={{ height: 50, width: 50 }} />
+        </SafeAreaView>
+    );
+}
 
-            <Controller
-                control={control}
-                name="email"
-                render={({ field: { onChange, onBlur, value } }) => (
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={onChange}
-                        onBlur={onBlur}
-                        value={value}
-                        placeholder="Insira seu email"
-                    />
-                )}
+const Stack1 = createNativeStackNavigator();
+
+function App() {
+    return (
+        <Stack1.Navigator
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: '#42eb89',
+                },
+                headerTintColor: '#fff',
+            }}
+        >
+            <Stack1.Screen
+                name="Home"
+                component={Conteudo}
+                options={{
+                    title: 'Esqueci minha Senha',
+                    headerRight: (props) => <MenuBar {...props} />
+                }}
             />
+        </Stack1.Navigator>
 
-            <TouchableOpacity style={styles.button} onPress={handleSubmit(handleSignIn)}>
-                <Text style={styles.buttonText}>Enviar</Text>
-            </TouchableOpacity>
-
-        </View>
-
-    )
+    );
 }
 
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent: 'center',
-        alignItems:'center',
-        backgrounColor:'#F0F4FF',
+    container: {
+        backgrounColor: '#F0F4FF',
         paddingHorizontal: 18
     },
-    title:{
-        fontSize: 34,
+    title: {
+        fontSize: 24,
         marginBottom: 34,
         fontWeight: 'Bold',
         color: '#121212'
     },
-    input:{
+    input: {
         width: '100%',
         height: 40,
         backgroundColor: '#ffffff',
     },
-    button:{
+    button: {
 
     },
-    buttonText:{
+    buttonText: {
         fontsize: 18,
         color: '#00000',
 
@@ -68,3 +83,5 @@ const styles = StyleSheet.create({
 
 
 })
+
+export default App;

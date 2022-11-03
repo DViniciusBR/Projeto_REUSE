@@ -7,7 +7,6 @@ import Estilos from '../../componentes/estilos';
 function TelaPrincipal({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
-      <Estilos/>
 
       <View style={{ flexDirection: 'row', marginLeft: 10 }}>
         <Image source={require('../../../assets/images/email.png')} style={{ height: 50, width: 50, padding: 10 }} />
@@ -25,6 +24,7 @@ function TelaPrincipal({ navigation }) {
         </TouchableOpacity>
         <Text>Dados pessoais</Text>
       </View>
+
     </View>
   );
 }
@@ -50,20 +50,13 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <Stack.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#42eb89',
-        },
-        headerTintColor: '#fff',
-      }}
-    >
+      screenOptions={{headerTintColor: '#fff'}}>
       <Stack.Screen
         name="Home"
         component={TelaPrincipal}
         options={{
-          title: 'Meus Dados',
-          headerLeft: (props) => <MenuLateral {...props} />,
-          headerRight: (props) => <MenuBar {...props} />
+          headerShown: false
+         
         }}
       />
     </Stack.Navigator>
