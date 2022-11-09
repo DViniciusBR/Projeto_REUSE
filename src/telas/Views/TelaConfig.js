@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 function Config({ navigation }) {
   return (

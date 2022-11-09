@@ -3,9 +3,7 @@ import { View, Image, Dimensions } from 'react-native';
 import { NativeBaseProvider, ScrollView, Icon } from 'native-base';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AntDesign, Entypo } from "@expo/vector-icons";
-import Menu from '../../componentes/Menu';
 import SearchBar from '../../componentes/SearchBar';
-import ButtonPost from '../../componentes/ButtonPost';
 
 const WIDTH = Dimensions.get('screen').width
 
@@ -62,7 +60,6 @@ function TelaDesapega() {
                     </View>
                 </ScrollView>
             </View>
-            <ButtonPost />
         </NativeBaseProvider>
     );
 }
@@ -71,14 +68,6 @@ function MenuBar() {
     return (
         <View>
             <Image source={require('../../../assets/images/logo.png')} style={{ height: 50, width: 50 }} />
-        </View>
-    );
-}
-
-function MenuLateral() {
-    return (
-        <View>
-            <Menu />
         </View>
     );
 }

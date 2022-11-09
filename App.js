@@ -1,18 +1,17 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TelaInicial from './src/telas/Views/TelaInicial';
-import TelaCad from './src/telas/Views/TelaCad';
-import TelaLog from './src/telas/Views/TelaLog';
-import TelaHome from './src/telas/Views/TelaHome';
+import TelaInicial from './src/telas/views/TelaInicial';
+import TelaCad from './src/telas/views/TelaCad';
+import TelaLog from './src/telas/views/TelaLog';
+import TelaHome from './src/telas/views/TelaHome';
 import Perfil from './src/telas/usuario/Perfil';
 import DadosConfig from './src/telas/usuario/DadosConfig';
 import Dados from './src/telas/usuario/Dados';
-import TelaArtigos from './src/telas/Views/TelaArtigos';
-import TelaDesapega from './src/telas/Views/TelaDesapega';
-import TelaSenha from './src/telas/Views/TelaSenha';
-import TelaPerfil from './src/telas/Views/TelaPerfil';
-import SalveMundo from './src/telas/Views/SalveMundo';
+import TelaArtigos from './src/telas/views/TelaArtigos';
+import TelaDesapega from './src/telas/views/TelaDesapega';
+import TelaSenha from './src/telas/views/TelaSenha';
+import SalveMundo from './src/telas/views/SalveMundo';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,7 +31,6 @@ export default function App() {
         <Stack.Screen name="DadosConfig" component={DadosConfig} options={{ headerShown: false }}/>
         <Stack.Screen name="Dados" component={Dados} options={{ headerShown: false }}/>
         <Stack.Screen name="TelaSenha" component={TelaSenha} options={{ headerShown: false }}/>
-        <Stack.Screen name="TelaPerfil" component={TelaPerfil} options={{ headerShown: false }}/>
         <Stack.Screen name="SalveMundo" component={SalveMundo} options={{ headerShown: false }}/>
       </Stack.Navigator> 
     </NavigationContainer >

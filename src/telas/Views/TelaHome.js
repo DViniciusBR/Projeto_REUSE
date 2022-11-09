@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaChat from './TelaChat';
 import Carrosel from '../../componentes/Carrosel';
 import Estilos from '../../componentes/estilos';
-import TelaJogo from './TelaJogo';
+import TelaJogo from '../jogo/TelaJogo';
 import Dados from '../usuario/Dados';
 
 const Tab = createBottomTabNavigator();
@@ -27,8 +27,7 @@ function HomeScreen({ navigation }) {
       <SafeAreaView style={{ flex: 1, flexDirection: 'row' }}>
         <ImageBackground source={require('../../../assets/images/telainicial.png')} style={{ resizeMode: "cover", flex: 1 }} imageStyle={{ opacity: 0.5 }}>
           <View
-            activeOpacity={0.8}
-            onPress={() => navigation.navigate('TelaArtigos', {})}>
+            activeOpacity={0.8}>
             <Carrosel />
           </View>
           <View flexDirection="row" alignSelf="flex-start">

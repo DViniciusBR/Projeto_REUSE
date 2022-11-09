@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Menu from '../../componentes/Menu';
-import Estilos from '../../componentes/estilos';
 
 function TelaPrincipal({ navigation }) {
   return (
@@ -25,22 +23,6 @@ function TelaPrincipal({ navigation }) {
         <Text>Dados pessoais</Text>
       </View>
 
-    </View>
-  );
-}
-
-function MenuBar() {
-  return (
-    <View>
-      <Image source={require('../../../assets/images/logo.png')} style={{ height: 50, width: 50 }} />
-    </View>
-  );
-}
-
-function MenuLateral() {
-  return (
-    <View>
-      <Menu />
     </View>
   );
 }

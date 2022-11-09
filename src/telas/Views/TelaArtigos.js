@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { View, Text, Image } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Menu from '../../componentes/Menu';
 
 function HomeScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Tela seguindo o protótipo</Text>
+      <Text>Informações sobre o tema</Text>
     </View>
   );
 }
